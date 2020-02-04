@@ -26,7 +26,7 @@ print( *(pd.date_range('20130101',periods=6)),sep = "\n")
 # 2013-01-05 00:00:00
 # 2013-01-06 00:00:00 
 
-df = pd.DataFrame(np.random.randint(10,20,[6,4]),index = list('PQRStv'), columns=list('ABCD') )
+df = pd.DataFrame(np.random.randint(10,20,[6,4]),index = list('pqrstv'), columns=list('abcd') )
 #     A   B   C   D
 # P  13  11  11  16
 # Q  13  19  17  13
@@ -116,3 +116,20 @@ print(df)
 print(df.sort_index(axis=0,ascending=False,kind='mergesort'))
 print(df.sort_index(axis=1,ascending=False,kind='mergesort'))
 
+print(df[['a','b']])
+df['sum'] = df['a'] +df['b'] +df['c'] +df['d'] 
+print(df)
+# df.drop(df.columns[[1,2]], axis= 1,inplace=True)
+df.drop(df.iloc[:,1:3], axis= 1,inplace=True) #to drop specific columns
+print(df)
+
+# op 
+#     a   d  sum
+# p  16  13   53
+# q  16  13   58
+# r  18  14   57
+# s  11  15   59
+# t  19  13   60
+# v  12  17   58
+
+df2.loc[b[0]]
