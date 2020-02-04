@@ -112,3 +112,7 @@ print(df.T)
 # B  12  14  16  17  17  11
 # C  11  17  15  10  19  11
 # D  15  13  13  19  19  15
+print(df)
+print(df.sort_index(axis=0,ascending=False,kind='mergesort'))
+print(df.sort_index(axis=1,ascending=False,kind='mergesort'))
+
