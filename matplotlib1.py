@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np 
+import random
 try : 
     x
     years = [1950, 1960, 1970, 1980, 1990, 2000, 2010]
@@ -42,10 +43,7 @@ try :
     plt.title("Distribution of Exam 1 Grades")
     plt.show()
 
-except:
-    a = 1
-
-# #line graph
+    # #line graph
 # plt.plot(x,y,marker='o', color = 'red',linestyle = 'solid')
 # plt.title('this is the code')
 # plt.show()
@@ -55,33 +53,69 @@ except:
 # plt.xticks(x,y) #shows values for all the raise in bars 
 # plt.show()
 
-x = [500,505]
+    x = [500,505]
 
-y = [2017,2018]
-print(x,y)
+    y = [2017,2018]
+    print(x,y)
 
-plt.bar(y,x,0.8) 
-plt.xticks(y)
-# plt.ticklabel_format(useoffset=False) 
-plt.ticklabel_format(useOffset=False)
-# plt.ticklabel_format(useOffset=False)
-plt.axis([2016.5,2018.5,495,506])
-plt.show()
+    plt.bar(y,x,0.8) 
+    plt.xticks(y)
+    # plt.ticklabel_format(useoffset=False) 
+    plt.ticklabel_format(useOffset=False)
+    # plt.ticklabel_format(useOffset=False)
+    plt.axis([2016.5,2018.5,495,506])
+    plt.show()
 
-plt.axis([2016.5,2018.5,0,506])
-plt.show()
-# mentions = [500, 505]
-# years = [2017, 2018]
+    plt.axis([2016.5,2018.5,0,506])
+    plt.show()
+    # mentions = [500, 505]
+    # years = [2017, 2018]
 
-# plt.bar(years, mentions, 0.8)
-# plt.xticks(years)
-# plt.ylabel("# of times I heard someone say 'data science'")
+    # plt.bar(years, mentions, 0.8)
+    # plt.xticks(years)
+    # plt.ylabel("# of times I heard someone say 'data science'")
 
-# # if you don't do this, matplotlib will label the x-axis 0, 1
-# # and then add a +2.013e3 off in the corner (bad matplotlib!)
-# plt.ticklabel_format(useOffset=False)
+    # # if you don't do this, matplotlib will label the x-axis 0, 1
+    # # and then add a +2.013e3 off in the corner (bad matplotlib!)
+    # plt.ticklabel_format(useOffset=False)
 
-# # misleading y-axis only shows the part above 500
-# plt.axis([2016.5, 2018.5, 499, 506])
-# plt.title("Look at the 'Huge' Increase!")
+    # # misleading y-axis only shows the part above 500
+    # plt.axis([2016.5, 2018.5, 499, 506])
+    # plt.title("Look at the 'Huge' Increase!")
+    # plt.show()
+
+
+except:
+    a = 1
+
+# v= [1, 2, 4, 8, 16, 32, 64, 128, 256]
+# b = [256, 128, 64, 32, 16, 8, 4, 2, 1]
+# total_error = [x + y for x, y in zip(v,b)]
+# print(total_error)
+# xs =[i for i, _ in enumerate(v)]
+# print(xs)
+# plt.plot(xs, v,'g-', label='v')
+# plt.plot(xs, b, 'r-.', label='bias^2')
+# plt.plot(xs, total_error,'b:',label='total error')
+# plt.legend(loc=5)
+# plt.xlabel("model complexity")
+# plt.xticks([])
+# plt.title("The Bias-v Tradeoff")
 # plt.show()
+
+
+x= random.sample(range(1, 100), 10)
+print(x)
+y= random.sample(range(1, 100), 10)
+y.reverse()
+print(y)
+totalerror = [u+v for u,v in zip(x,y)]
+print(totalerror)
+xs = [ i for i,_ in enumerate(x)]
+
+plt.plot(xs,x,'g-',label='xxx')
+plt.plot(xs,y,'b-.',label = 'yyy')
+plt.plot(xs,totalerror,'r:',label = 'error')
+plt.legend(loc=9)
+plt.xticks([])
+plt.show()
