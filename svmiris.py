@@ -10,17 +10,17 @@ from sklearn.model_selection import GridSearchCV
 
 
 
-iris = sns.load_dataset('iris')
-print(iris.keys())
-sns.pairplot(iris,hue='species', palette='Dark2')
+irisflower = sns.load_dataset('iris')
+print(irisflower.keys())
+sns.pairplot(irisflower,hue='species', palette='Dark2')
 plt.show()
 
-setosa = iris[iris['species']=='setosa']
+setosa = irisflower[irisflower['species']=='setosa']
 sns.kdeplot(setosa['sepal_width'],setosa['sepal_length'],cmap='plasma',shade =True,shade_lowest=False)
 plt.show()
-x = iris.drop('species',axis=1)
-y= iris['species']
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3,random_state = 101)
+x = irisflower.drop('species',axis=1)
+y= irisflower['species']
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3)
 algo = SVC()
 algo.fit(x_train,y_train)
 svc_predictions = algo.predict(x_test)
@@ -41,10 +41,12 @@ print("\n",algo1.best_params_)
 print("\n",algo1.best_estimator_)
 
 grid_predictions = algo1.predict(x_test)
-print(confusion_matrix(y_test,grid_predictions))
-print("\n")
+# print(confusion_matrix(y_test,grid_predictions))
+# print("\n")
 #normal predictions: 
+print("normal predictions")
 print("confusion_matrix : \n",confusion_matrix(y_test,svc_predictions),"\n","classification_report: \n",classification_report(y_test,svc_predictions))
 
 #grid predictions
+print("grid predictions")
 print("confusion_matrix : \n",confusion_matrix(y_test,grid_predictions),"\n","classification_report: \n",classification_report(y_test,grid_predictions))
