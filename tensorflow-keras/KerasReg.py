@@ -10,7 +10,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense 
 from sklearn.metrics import mean_absolute_error,mean_squared_error,explained_variance_score
 
-df = pd.read_csv('TensorFlow_FILES/DATA/kc_house_data.csv')
+df = pd.read_csv('TensorFlow_FILES\DATA\kc_house_data.csv')
 # analysis : 
 
 
