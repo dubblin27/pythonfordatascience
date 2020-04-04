@@ -8,5 +8,7 @@ df = pd.read_csv('TensorFlow_FILES\DATA\lending_club_loan_two.csv')
 # print(df1.head())
 # print(df1.info())
 
-sns.countplot(x = 'loan_status', data = df)
-plt.show()
+# sns.countplot(x = 'loan_status', data = df)
+# plt.show()
+
+print(df.corr())
