@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-train = pd.read_csv('Refactored_Py_DS_ML_Bootcamp-master/13-Logistic-Regression/titanic_train.csv')
+train = pd.read_csv('dataset and ipynb\13-Logistic-Regression\titanic_train.csv')
 print(train.head())
 
 # sns.heatmap(train.isnull())
